@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De-Extinction: A Major Breakthrough for Ecological Balance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a3a36;
+            --secondary-color: #4a8c7d;
+            --accent-color: #d95d39;
+            --light-color: #f0f7f4;
+            --dark-color: #0d1f1a;
+            --text-color: #333;
+            --text-light: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/free-photo/wild-wolf-nature_23-2151430248.jpg?semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 50px 0;
+        }
+        
+        .article-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .intro-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .intro-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .intro-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin: 30px 0 20px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background-color: rgba(74, 140, 125, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 30px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 15px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .resources {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .resources h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .resources ul {
+            list-style-position: inside;
+        }
+        
+        .resources li {
+            margin-bottom: 10px;
+        }
+        
+        .resources a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .resources a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        
+        .author-section {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        .author-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-image i {
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+        
+        .author-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .author-info p {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .social-links {
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .intro-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="fade-in">DE-EXTINCTION: A MAJOR BREAKTHROUGH FOR ECOLOGICAL BALANCE</h1>
+            <p class="fade-in delay-1">Witnessing the rebirth of species lost to time through groundbreaking genetic engineering</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#process">The Process</a></li>
+            <li><a href="#importance">Importance</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#author">Author</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <article class="article-container fade-in delay-2">
+            <section id="intro" class="intro-section">
+                <div class="intro-text">
+                    <h2>The Return of the Dire Wolves</h2>
+                    <p>"Winter is coming". The famous "Game of Thrones" dialogue is coming to life as two dire wolves have taken birth on earth after a long wait of 10000 years. As technology progresses, a bio-science company named Colossal Biosciences has achieved exceptional result in bringing back two dire wolves, named Remus and Romulus from extinction.</p>
+                    <p>There is also a female dire wolf named Khaleesi (named after the popular Game of Thrones character Daenerys Targaryen). The dire wolves were last found 10000 years ago and it has taken a lot of time for humans to hear them howl. They reflect the epitome of biotechnology and what science is capable of doing.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dire Wolf Illustration">
+                </div>
+            </section>
+            
+            <section id="what-is">
+                <h2>What is De-extinction and why is it important?</h2>
+                <p>Earth has had diverse species and as the time has flown, science researchers and experts have understood the role of each and every species in maintaining the ecological balance. However, heavy industrialization has led to deforestation and habitat destruction which eventually has resulted in extinction of important species.</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80" alt="Cheetah">
+                        <div class="gallery-caption">Barbary Lion - A critically endangered species</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1550853024-fae8cd4be47f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Rhinoceros">
+                        <div class="gallery-caption">Keel Billed Toucan - Another species on the verge of extinction</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Deforestation">
+                        <div class="gallery-caption">Habitat destruction of major animals through deforestation</div>
+                    </div>
+                </div>
+                
+                <p>Some of the species have been declared as Critically Endangered Species and are on the verge of extinction. Cheetah, Rhinoceros are few such species of animals that have had huge impact on the ecological balance of the Earth. Predators, particularly, have huge responsibility in maintaining food chain up and running.</p>
+                
+                <div class="highlight">
+                    <p>That is why, communities like Save the Rhino International are being started that aim to raise funds and help prevent the extinction of lovely and wonderful creatures like Rhinos. Colossal biosciences, on the other hand, is a company that focuses mainly on bringing back already extinct animals to life through the aid of Genetic Engineering.</p>
+                </div>
+                
+                <p>They call this process of bringing back extinct animal on Earth as "De-extinction". They have shown the world the power of Genetic Engineering, thus spreading a message that Science can be used for right causes.</p>
+            </section>
+            
+            <section id="process">
+                <h2>How did Colossal Biosciences bring dire wolves to life?</h2>
+                <p>Colossal Biosciences a company that consists of highly skilled genetic engineers and biological experts who have come together for a good cause and have created a revolution by helping a species take birth which had disappeared almost 10000 years ago.</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/F5uCuOwK_VE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <p>The experts at Colossal Biosciences have exploited the genetic engineering techniques, genome editing skills and surrogacy to help two cute dire wolves gain life. The YouTube video shows the process of De-extinction.</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="data:image/jpeg;base64,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" alt="Genetic Engineering">
+                        <div class="gallery-caption">Genetic Engineering Lab</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1447&q=80" alt="Biotechnology">
+                        <div class="gallery-caption">Advanced Biotechnology</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="importance">
+                <h2>Why did I write this blog?</h2>
+                <p>Some people find animals lovely and amazing. I am one among them. I find animals, specifically the Rhinos, as fascinating creatures and they have had huge impact in my life. Seeing Colossal Biosciences give their shot at bringing the dire wolves to life made me realize the true potential of technology that I am studying.</p>
+                
+                <p>Being an M.Tech student, I have always underestimated the power of genetic algorithms. But now, seeing all such advancements, I realize that we only understand the capability of something or someone only when you truly know them. So, it important to never judge something or someone only by the looks of it.</p>
+                
+                <div class="highlight">
+                    <p>Lastly, enjoy the environment, live in harmony with the animals. Treat them well and pour all the love over them. Stay Happy and Healthy. Cheers!</p>
+                </div>
+                
+                <p>I have returned to blog and article writing after two long years. I have tried to keep this blog original and have written it in my own words. There is no usage of Generative AI tools like ChatGPT and DeepSeek. If you have any comments or feedback please feel free to share them through the email specified in this blog!</p>
+                
+                <p>Thank you for your time and I hope this blog helped you learn something new! Hoping to write some more interesting articles and blogs!</p>
+            </section>
+            
+            <section id="resources" class="resources">
+                <h3>Acknowledgment</h3>
+                <ul>
+                    <li><strong>Colossal Biosciences</strong>
+                        <ul>
+                            <li><a href="https://colossal.com/" target="_blank">Main Website</a></li>
+                            <li><a href="https://www.youtube.com/@itiscolossal/videos" target="_blank">YouTube</a></li>
+                            <li><a href="https://www.linkedin.com/company/itiscolossal" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://x.com/colossal?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">X (Twitter)</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Save the Rhino International</strong>
+                        <ul>
+                            <li><a href="https://www.savetherhino.org/" target="_blank">Main Website</a></li>
+                            <li><a href="https://www.facebook.com/@savetherhinointernational/" target="_blank">Facebook</a></li>
+                            <li><a href="https://www.youtube.com/@SavetheRhinoInternational" target="_blank">YouTube</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://time.com/7274542/colossal-dire-wolf/" target="_blank">Time Magazine Article</a></li>
+                </ul>
+            </section>
+            
+            <section id="author" class="author-section">
+                <div class="author-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="author-info">
+                    <h3>Omkar R Deshpande</h3>
+                    <p>M.Tech Student</p>
+                    <p>Email: <a href="mailto:omkardeshpande201@gmail.com">omkardeshpande201@gmail.com</a></p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About This Blog</h3>
+                    <p>An exploration of de-extinction technology and its impact on ecological balance, written with passion for science and nature.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#intro">Introduction</a>
+                    <a href="#process">The Process</a>
+                    <a href="#importance">Importance</a>
+                    <a href="#resources">Resources</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:omkardeshpande201@gmail.com">Email the Author</a>
+                    <p>Last Updated: April 2025</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Omkar R Deshpande. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
